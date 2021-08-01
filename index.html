@@ -1033,14 +1033,12 @@ for(let i =0; i < arr.length; i++) {
   
   
   
-  function invalidInput(err, input) {
+  function invalidInput(err) {
     $("."+err).style.display = "block";
-    $("."+input).style.borderColor = "#dd0909";
   }
   
-  function validInput(valid, inputs) {
+  function validInput(valid) {
     $(`.${valid}`).style.display = "none";
-    $(`.${inputs}`).style.borderColor = "#ffffff95";
   }
  
   
@@ -1049,14 +1047,14 @@ for(let i =0; i < arr.length; i++) {
     
   details.forEach((inp, idx)=>{
       if(inp.value.trim =="" || !(inp.value)) {
-      invalidInput("error"+idx, "reg"+idx);
+      invalidInput("error"+idx);
       event.preventDefault();
     } else if(username.value =="" || username.value == " ") {
-        invalidInput("error0", "reg0");
+        invalidInput("error0");
      
         
     } else if(pass.value =="" || pass.value == " ") {
-      invalidInput("error1", "reg1");
+      invalidInput("error1");
 
     }  else {
       return true;
@@ -1066,11 +1064,11 @@ for(let i =0; i < arr.length; i++) {
   
   
       username.onfocus = ()=>{
-       validInput("error0", "reg0");
+       validInput("error0");
      //  $(".error0").style.display = "none";
       };
       pass.onfocus = ()=>{
-        validInput("error1", "reg1");
+        validInput("error1");
       };
 
   }
@@ -1081,16 +1079,16 @@ for(let i =0; i < arr.length; i++) {
   for(let i=0; i < details2.length; i++) {
     
      if(details2[i].value.trim =="" || !(details2[i].value)) {
-invalidInput("error"+i+""+i, "reg"+i+""+i);
+invalidInput("error"+i+""+i);
       event.preventDefault();
      } else if(firstname.value =="" || firstname.value == " ") {
-      invalidInput("error00", "reg00");
+      invalidInput("error00");
     } /*else if(surname.value =="" || surname.value == " ") {
       invalidInput("error11");
     }*/ else if(email.value =="" || email.value == " ") {
-      invalidInput("error11", "reg11");
+      invalidInput("error11");
     } else if(pass2.value =="" || pass2.value == " ") {
-      invalidInput("error22", "reg22");
+      invalidInput("error22");
     } else {
       return true;
  /*  startButton.innerHTML = "<span><i class='spinning fas fa-spinner'></i></span>  Start Quiz";*/
@@ -1099,16 +1097,16 @@ invalidInput("error"+i+""+i, "reg"+i+""+i);
  
   
       firstname.onfocus = ()=>{
-        validInput("error00", "reg00");
+        validInput("error00");
       };
    /*   surname.onfocus = ()=>{
         validInput("error11", "reg11");
       };*/
       email.onfocus = ()=>{
-        validInput("error11", "reg11");
+        validInput("error11");
       };
       pass2.onfocus = ()=>{
-        validInput("error22", "reg22");
+        validInput("error22");
       };
     
   
